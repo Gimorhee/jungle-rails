@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 
   resources :products do
     resources :reviews
+    delete :reviews
   end
 
   resources :orders, only: [:create, :show]

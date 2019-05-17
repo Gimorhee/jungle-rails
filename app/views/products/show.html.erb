@@ -22,20 +22,9 @@
           <dd><%= @product.quantity %></dd>
           <dt>Price</dt>
           <dd><%= @product.price %></dd>
-
-
-          <%= form_for :review, url: product_reviews_path(@product) do |f| %>
-            <h2>New Review</h2>
-            <%= f.label :description %><br>
-            <%= f.text_area :description %><br>
-            <%= f.select :rating, options_for_select(0..5), { prompt: "Rate the product"} %>
-            <%= f.submit("Create review") %><br>
-          <% end %>
-
-          <dt>Review description</dt>
-          <dd><%= @review.description %></dd>
-          <dt>Rating</dt>
-          <dd><%= @review.rating %></dd>
+          <dt>Average Rating</dt>
+          <dd><%= @average_rating %>   <%= link_to 'Write a review', product_reviews_path(@product) %> </dd>
+          
         </dl>
       </div>
     </div>

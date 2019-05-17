@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Reviews</h1>
+
+<% if current_user %>
+  <%= form_for :review, url: product_reviews_path(@product) do |f| %>
+    <h2>New Review</h2>
+    <%= f.label :description %><br>
+    <%= f.text_area :description %><br>
+    <%= f.select :rating, options_for_select(1..5), { prompt: "Rate the product"} %>
+    <%= f.submit("Create review") %><br>
+  <% end %>
+
+  <% else %>
+  <%=link_to 'Please login to write a review', '/login' %>
+  redirect_to product_reviews_path(@product)
+<% end %>
+
+  <% @reviews.each do |review| %>
+    <div>
+      <h2><%= review.description %></h2>
+      <h2><%= review.rating %></h2>
+      <%= button_to 'Destroy', product_review_path(@product.id, review.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+    </div>
+  <% end %>
+  
+</body>
+</html>
