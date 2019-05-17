@@ -1,40 +1,36 @@
 <div class="text-center login-signin">
+  <h1>Register</h1>
+  <%= form_for :user, url: '/users' do |f|%>
 
-<h1>Register</h1>
+    <div class="form-signin">
+      <div class="form-label-group">
+        <%= f.text_field :name, class: "form-control", placeholder: "First Name" %>
+      </div>
 
+      <div class="form-label-group">
+        <%= f.text_field :last_nam, class: "form-control", placeholder: "Last Name" %>
+      </div>
 
-<%= form_for :user, url: '/users' do |f|%>
+      <div class="form-label-group">
+        <%= f.text_field :email, class: "form-control", placeholder: "Email address" %>
+      </div>
 
-<div class="form-signin">
-<div class="form-label-group">
-<%= f.text_field :name, class: "form-control", placeholder: "First Name" %>
- </div>
+      <div class="form-label-group">
+      <%= f.password_field :password, class: "form-control", placeholder: "Password"  %>
+      </div>
 
-<div class="form-label-group">
-  <%= f.text_field :last_nam, class: "form-control", placeholder: "Last Name" %>
-</div>
+      <div class="form-label-group">
+      <%= f.password_field :password_confirmation, class: "form-control", placeholder: "Password Confirmation" %>
+      </div>
 
-<div class="form-label-group">
-  <%= f.text_field :email, class: "form-control", placeholder: "Email address" %>
-</div>
+      <div class="checkbox mb-3">
+        <label>
+          <input type="checkbox" value="remember-me"> Remember me
+        </label>
+      </div>
 
-<div class="form-label-group">
- <%= f.password_field :password, class: "form-control", placeholder: "Password"  %>
-</div>
-
-<div class="form-label-group">
- <%= f.password_field :password_confirmation, class: "form-control", placeholder: "Password Confirmation" %>
-</div>
-
-<div class="checkbox mb-3">
-<label>
-  <input type="checkbox" value="remember-me"> Remember me
-</label>
-</div>
-
- <%= f.submit 'Submit', class: "btn btn-lg btn-warning btn-block"  %>
- <p class="mt-5 mb-3 text-muted">&copy;2019</p> 
-</div>
-
-<% end %>
+      <%= f.submit 'Submit', class: "btn btn-lg btn-warning btn-block"  %>
+      <p class="mt-5 mb-3 text-muted">&copy;2019</p> 
+    </div>
+  <% end %>
 </div>
