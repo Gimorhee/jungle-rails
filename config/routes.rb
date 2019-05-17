@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :emails
+  resources :order_ids
   root to: 'products#index'
 
   resources :products, only: [:index, :show]
