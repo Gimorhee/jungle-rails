@@ -1,26 +1,40 @@
 <div class="text-center login-signin">
+
 <h1>Register</h1>
-<form class="form-signin" action="/users" accept-charset="UTF-8" method="post">
-<input name="utf8" type="hidden" value="✓">
-<input type="hidden" name="authenticity_token" value="6OcDm/6ijRz5t8FfAUQ0KYyS9QEm+pvi+VD2ub3iUAyWaxdC68JjQDcwptuTIKOsz2iIgLLVTe/uckrRLwF3LQ==">
-  <div class="form-label-group">
-    <input class="form-control" type="text" name="user[name]" id="user_name" placeholder="Name">
-  </div>
-  <div class="form-label-group">
-    <input class="form-control" type="text" name="user[email]" id="user_email" placeholder="Email address">
-  </div>
-  <div class="form-label-group">
-    <input class="form-control" type="password" name="user[password]" id="user_password" placeholder="Password">
-  </div>
-  <div class="form-label-group">
-    <input class="form-control" type="password" name="user[password_confirmation]" id="user_password_confirmation" placeholder="Confirm Password">
-  </div>
-  <div class="checkbox mb-3">
-    <label>
-      <input type="checkbox" value="remember-me"> Remember me
-    </label>
-  </div>
-    <input class="btn btn-lg btn-warning btn-block"type="submit" name="commit" value="Submit">
-    <p class="mt-5 mb-3 text-muted">&copy;2019</p>
-  </form>
+
+
+<%= form_for :user, url: '/users' do |f|%>
+
+<div class="form-signin">
+<div class="form-label-group">
+<%= f.text_field :name, class: "form-control", placeholder: "First Name" %>
+ </div>
+
+<div class="form-label-group">
+  <%= f.text_field :last_nam, class: "form-control", placeholder: "Last Name" %>
+</div>
+
+<div class="form-label-group">
+  <%= f.text_field :email, class: "form-control", placeholder: "Email address" %>
+</div>
+
+<div class="form-label-group">
+ <%= f.password_field :password, class: "form-control", placeholder: "Password"  %>
+</div>
+
+<div class="form-label-group">
+ <%= f.password_field :password_confirmation, class: "form-control", placeholder: "Password Confirmation" %>
+</div>
+
+<div class="checkbox mb-3">
+<label>
+  <input type="checkbox" value="remember-me"> Remember me
+</label>
+</div>
+
+ <%= f.submit 'Submit', class: "btn btn-lg btn-warning btn-block"  %>
+ <p class="mt-5 mb-3 text-muted">&copy;2019</p> 
+</div>
+
+<% end %>
 </div>
