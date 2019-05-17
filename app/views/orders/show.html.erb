@@ -15,12 +15,12 @@
       </thead>
 
       <tbdody>
-      <% total_amount = 0 %>
-      <% line_items = LineItem.where(order_id: @order.id) %>
-      <% line_items.each do |item| %>
-        <% total_amount += item.total_price %>
-        <%= render 'item', item: item %>
-      <% end %>
+        <% total_amount = 0 %>
+        <% line_items = LineItem.where(order_id: @order.id) %>
+        <% line_items.each do |item| %>
+          <% total_amount += item.total_price %>
+          <%= render 'item', item: item %>
+        <% end %>
       </tbody>
       <tfoot>
         <tr>
@@ -28,7 +28,7 @@
             TOTAL:
           </th>
           <th>
-          <%= total_amount %>
+            <%= total_amount %>
           </th>
         </tr>
       </tfoot>
