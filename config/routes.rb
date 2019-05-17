@@ -12,6 +12,10 @@ Rails.application.routes.draw do
     post   :remove_item
   end
 
+  resources :products do
+    resources :reviews
+  end
+
   resources :orders, only: [:create, :show]
 
   get '/login' => 'sessions#new'
