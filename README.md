@@ -14,8 +14,6 @@ Jungle is a mini e-commerce application built with Rails 4.2 for purposes of tea
 
 ![Mycart](https://github.com/Gimorhee/jungle-rails/blob/master/Image/Mycart.png)
 
-![Description](https://github.com/Gimorhee/jungle-rails/blob/master/Image/Description.png)
-
 ![Review1](https://github.com/Gimorhee/jungle-rails/blob/master/Image/Review1.png)
 
 ![Review2](https://github.com/Gimorhee/jungle-rails/blob/master/Image/Review2.png)
