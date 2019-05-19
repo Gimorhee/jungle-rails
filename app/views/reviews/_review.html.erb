@@ -1,0 +1,15 @@
+<%= form_for :review, url: product_reviews_path(@product) do |f| %>
+    <div class="review-description">
+        Description: <%= f.text_area :description, class: "form-control review-description-field", placeholder: "Please share your experience with #{@product.name}!" %>
+    </div>
+    <br>
+    <div>
+    <%= f.select :rating, options_for_select(1..5), { prompt: "Rate the product"}, class: "btn btn-lg btn-warning dropdown-toggle" %> <br> <br>
+        <% if current_user %>
+            <%= f.submit "Submit", class: "btn btn-lg btn-warning" %>
+        <% else %>
+            <p class="review-post-denied"> You need to be logged to write a review! <p>
+            <%= link_to 'Login', login_url , class: "btn btn-lg btn-success" %>
+        <% end %>
+    </div>
+    <% end %>

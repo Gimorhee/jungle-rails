@@ -2,15 +2,11 @@ class ReviewsController < ApplicationController
     before_filter {authenticate}
 
     def index
-        puts 'Params!'
-        puts params[:product_id]
         @product = Product.find(params[:product_id])
         @reviews = @product.reviews.all.order(created_at: :desc)
     end
 
     def create
-        puts 'Params!'
-        puts params
         @product = Product.find(params[:product_id])
         @review = @product.reviews.create(allowed_params)
         @review.user = current_user

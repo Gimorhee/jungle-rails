@@ -4,32 +4,38 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>Review Page</title>
 </head>
 <body>
-  <h1>Reviews</h1>
 
-<% if current_user %>
-  <%= form_for :review, url: product_reviews_path(@product) do |f| %>
-    <h2>New Review</h2>
-    <%= f.label :description %><br>
-    <%= f.text_area :description %><br>
-    <%= f.select :rating, options_for_select(1..5), { prompt: "Rate the product"} %>
-    <%= f.submit("Create review") %><br>
-  <% end %>
 
-  <% else %>
-  <%=link_to 'Please login to write a review', '/login' %>
-  redirect_to product_reviews_path(@product)
+<h2 class="page-header">Write a Review</h2>
+<div class="well">
+  <div class="form-group">
+    <%= render(partial: 'reviews/review') %>
+  </div>
+</div>
+<h2 class="page-header">Reviews</h2>
+<% @reviews.each do |review| %>
+  <div class="well">
+    <h4>
+      <%= User.find(review.user_id).name %> <%= User.find(review.user_id).lastName %>
+      <% review.rating.times do |star| %>
+        ⭐️
+      <% end %>
+      <span class="date-ago">
+      <%= review.created_at.strftime("on %m/%d/%Y") %>
+      </span>
+    </h4>
+    <p><%= review.description %></p>
+    <% if current_user && current_user.id == review.user_id %>
+      <%= link_to fa_icon("trash"), [@product, review], class: "btn btn-sm btn-danger", method: :delete, data: { confirm: "Are you sure?" } %>
+    <% end %>
+  </div>
 <% end %>
+ 
 
-  <% @reviews.each do |review| %>
-    <div>
-      <h2><%= review.description %></h2>
-      <h2><%= review.rating %></h2>
-      <%= button_to 'Destroy', product_review_path(@product.id, review.id), method: :delete, data: { confirm: 'Are you sure?' } %>
-    </div>
-  <% end %>
-  
 </body>
 </html>
+
+

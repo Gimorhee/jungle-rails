@@ -18,4 +18,3 @@ class ProductsController < ApplicationController
 
 end
 
-Review.create(product_id: 11, user_id: 12, )

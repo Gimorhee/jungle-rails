@@ -80,3 +80,18 @@ form.button_to {
 div.login-signin {
   padding-top: 50px;
 }
+
+div.clearfix {
+  clear: both;
+  display: table;
+}
+
+div.box {
+  float: left;
+  width: 20%;
+  padding: 5px;
+}
+
+#review-form {
+  float: left;
+}
