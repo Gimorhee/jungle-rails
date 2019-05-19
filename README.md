@@ -2,6 +2,19 @@
 
 Jungle is a mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example. Jungle was built with users in mind from the main catalog to each products detail pages.
 
+## Final Product
+![Register](https://github.com/Gimorhee/jungle-rails/blob/master/Image/Register.png)
+![Login](https://github.com/Gimorhee/jungle-rails/blob/master/Image/Login.png)
+![Badge](https://github.com/Gimorhee/jungle-rails/blob/master/Image/Badge.png)
+![Mycart](https://github.com/Gimorhee/jungle-rails/blob/master/Image/Mycart.png)
+![Description](https://github.com/Gimorhee/jungle-rails/blob/master/Image/Description.png)
+![Review1](https://github.com/Gimorhee/jungle-rails/blob/master/Image/Review1.png)
+![Review2](https://github.com/Gimorhee/jungle-rails/blob/master/Image/Review2.png)
+![Review3](https://github.com/Gimorhee/jungle-rails/blob/master/Image/Review3.png)
+![Payment1](https://github.com/Gimorhee/jungle-rails/blob/master/Image/Payment.png)
+![Payment2](https://github.com/Gimorhee/jungle-rails/blob/master/Image/Payment2.png)
+![Authentication](https://github.com/Gimorhee/jungle-rails/blob/master/Image/Authentication.png)
+
 ## Setup
 
 1. Fork & Clone
