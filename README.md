@@ -1,7 +1,6 @@
 # Jungle
 
-A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.
-
+Jungle is a mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example. Jungle was built with users in mind from the main catalog to each products detail pages.
 
 ## Setup
 
@@ -26,3 +25,28 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 * Rails 4.2 [Rails Guide](http://guides.rubyonrails.org/v4.2/)
 * PostgreSQL 9.x
 * Stripe
+
+## Functional featuress implemented
+* Feature: Sold-out Badge
+    * When a product quantity reaches 0, a soldout badge should be displayed and notify customers that the product is sold-out
+
+* Feature: Admin Acess
+    * Only admin users are allow to add/edit categories and products
+    * User must enter HTTP auth login/password to acces admin functionality
+
+* Feature: User Authentication
+    * As a Visitor I can go to the registration page from any page in order to create an account
+    * As a Visitor I can sign up for a user account with my e-mail, password, first name and last name
+    * As a Visitor I can sign in using my e-mail and password
+    * As a user, I can log out from any page
+    * As a User I cannot sign up with an existing e-mail address (uniqueness validation)
+    * Passwords are not stored as plain text in the database. Instead, has_secure_password is used in the User model, leveraging the bcrypt gem
+
+* Feature: Email Receipt
+    * When the order is processed, users will get a notification email with summarized order information
+
+* Feature: Product Rating
+   * As a visitor I can view the overall rating of products as I browse the catalog
+    * As a visitor I can view the list of ratings and reviews when viewing the product detail
+    * As a logged in user I can rate & review a product in a single step
+    * As a logged in user I can delete a rating or review that I previously created
