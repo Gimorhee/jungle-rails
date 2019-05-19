@@ -54,7 +54,7 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 * Feature: Sold-out Badge
     * When a product quantity reaches 0, a soldout badge should be displayed and notify customers that the product is sold-out
 
-* Feature: Admin Acess
+* Feature: Admin Access
     * Only admin users are allow to add/edit categories and products
     * User must enter HTTP auth login/password to acces admin functionality
 
