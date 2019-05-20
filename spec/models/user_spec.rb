@@ -49,15 +49,29 @@ RSpec.describe User, type: :model do
       @user = User.create(email: "test@gmail.com", name: "anything", lastName: "anything", password: "12345", password_confirmation: nil)
       expect(@user.errors.full_messages).to include("Password confirmation can't be blank")
     end
-
-    
-
-
-
-
   end
 
   describe '.authenticate_with_credentials' do
-    # examples for this class method here
+    
+    it 'should return true when password matches and user has the same email address' do
+      @user1 = User.create(email: "test@gmail.com", name: "anything", lastName: "anything", password: "12345", password_confirmation: "12345")
+      @user2 = User.authenticate_with_credentials("test@gmail.com")
+
+      expect(@user1).to eq @user2
+    end
+
+    it 'should return true when password matches and the user email contains spaces' do
+      @user1 = User.create(email: "test@gmail.com", name: "anything", lastName: "anything", password: "12345", password_confirmation: "12345")
+      @user2 = User.authenticate_with_credentials(" test@gmail.com ")
+
+      expect(@user1).to eq @user2
+    end
+
+    it 'should return true when password matches and the user email has uppercase in it' do
+      @user1 = User.create(email: "test@gmail.com", name: "anything", lastName: "anything", password: "12345", password_confirmation: "12345")
+      @user2 = User.authenticate_with_credentials("TEST@gmail.com")
+
+      expect(@user1).to eq @user2      
+    end
   end
 end

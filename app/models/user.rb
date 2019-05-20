@@ -8,7 +8,17 @@ class User < ActiveRecord::Base
     has_secure_password
     has_many :reviews
 
+    def self.authenticate_with_credentials(email)
+        @user = User.find_by(email: email.downcase.strip)
+        if (@user && @user.passwordConfirmation?)
+          @user
+        else
+            nil
+        end
+    end
+
     def passwordConfirmation?
         self.password == self.password_confirmation
     end
+
 end
