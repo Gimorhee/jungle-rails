@@ -13,3 +13,4 @@ link_to 'Edit', edit_article_path(article)
 link_to 'Edit', :edit_article
 link_to 'Edit', [:edit, :article]
 
+expect(page).to have_content("~~~~")
