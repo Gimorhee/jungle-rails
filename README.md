@@ -14,8 +14,6 @@ Jungle is a mini e-commerce application built with Rails 4.2 for purposes of tea
 
 ![Mycart](https://github.com/Gimorhee/jungle-rails/blob/master/Image/Mycart.png)
 
-![Description](https://github.com/Gimorhee/jungle-rails/blob/master/Image/Description.png)
-
 ![Review1](https://github.com/Gimorhee/jungle-rails/blob/master/Image/Review1.png)
 
 ![Review2](https://github.com/Gimorhee/jungle-rails/blob/master/Image/Review2.png)
@@ -56,7 +54,7 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 * Feature: Sold-out Badge
     * When a product quantity reaches 0, a soldout badge should be displayed and notify customers that the product is sold-out
 
-* Feature: Admin Acess
+* Feature: Admin Access
     * Only admin users are allow to add/edit categories and products
     * User must enter HTTP auth login/password to acces admin functionality
 
